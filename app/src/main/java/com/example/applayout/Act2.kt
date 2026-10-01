@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.applayout.ui.theme.AppLayoutTheme
@@ -21,7 +20,8 @@ class Act2 : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppLayoutTheme {
-                MyScaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                // Langsung pakai Scaffold, tidak perlu MyScaffold buatan sendiri
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     TataletakBoxColumnRow(
                         modifier = Modifier.padding(paddingValues = innerPadding)
                     )
@@ -31,20 +31,10 @@ class Act2 : ComponentActivity() {
     }
 }
 
-@Composable
-fun MyScaffold(
-    modifier: Modifier = Modifier,
-    content: @Composable (PaddingValues) -> Unit
-) {
-    Scaffold(modifier = modifier) { innerPadding ->
-        content(innerPadding)
-    }
-}
-
 // ===================== KODE TAMBAHAN =====================
 
 @Composable
-fun ContohColumn1(modifier: Modifier = Modifier) {
+fun LatihanColumn1(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.padding(top = 20.dp, start = 20.dp)
     ) {
@@ -54,8 +44,8 @@ fun ContohColumn1(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ContohRow1(modifier: Modifier = Modifier) {
-    val kata = stringResource(id = R.string.kata)
+fun LatihanRow1(modifier: Modifier = Modifier) {
+    val kata = "Contoh Kata"
     Row(
         modifier = modifier
             .padding(top = 60.dp, start = 60.dp)
@@ -67,7 +57,7 @@ fun ContohRow1(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ContohColumn2(modifier: Modifier = Modifier) {
+fun LatihanColumn2(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.padding(top = 20.dp, start = 20.dp)
     ) {
@@ -77,8 +67,8 @@ fun ContohColumn2(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ContohRow2(modifier: Modifier = Modifier) {
-    val kota = stringResource(id = R.string.kota)
+fun LatihanRow2(modifier: Modifier = Modifier) {
+    val kota = "Contoh Kota"
     Row(
         modifier = modifier
             .padding(top = 60.dp, start = 60.dp)
@@ -152,7 +142,7 @@ fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(height = 110.dp)
-                .background(Color(0xFF008080)), // ← Teal pakai hex code
+                .background(Color(0xFF008080)),
             contentAlignment = Alignment.Center
         ) {
             Column {
