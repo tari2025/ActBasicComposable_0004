@@ -37,7 +37,7 @@ fun HalamanProfilKucing(modifier: Modifier = Modifier) {
             contentScale = ContentScale.Crop
         )
 
-        // Komposisi utama
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -55,3 +55,32 @@ fun HalamanProfilKucing(modifier: Modifier = Modifier) {
         }
     }
 }
+
+@Composable
+fun HeaderSection() {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = "Login",
+            color = Color.Blue,
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Ini adalah halaman login,",
+            color = Color.White,
+            fontSize = 16.sp
+        )
+    }
+}
+
+@Composable
+fun LogoSection() {
+    Image(
+        painter = painterResource(id = R.drawable.logo_umy),
+        contentDescription = "Logo UMY",
+        modifier = Modifier.size(120.dp),
+        contentScale = ContentScale.Fit
+    )
+}
+
+
