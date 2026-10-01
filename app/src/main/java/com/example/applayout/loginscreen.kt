@@ -84,3 +84,26 @@ fun LogoSection() {
 }
 
 
+@Composable
+fun DataMahasiswaSection() {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = "Nama",
+            color = Color.Red,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Deni Lestari", // <-- Diubah
+            color = Color.Blue,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "20240140004", // <-- Diubah
+            color = Color.Black,
+            fontSize = 26.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
