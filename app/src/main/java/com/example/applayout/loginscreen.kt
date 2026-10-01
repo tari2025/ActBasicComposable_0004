@@ -19,3 +19,13 @@ fun HalamanProfilKucing(modifier: Modifier = Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         )
+        HeaderSection()
+        Spacer(modifier = Modifier.height(20.dp))
+        LogoSection()
+        Spacer(modifier = Modifier.height(20.dp))
+        DataMahasiswaSection()
+        Spacer(modifier = Modifier.height(30.dp))
+        GambarKucingOrenSection()
+    }
+}
+}
