@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.sp
 fun HalamanProfilKucing(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize()) {
 
-
+        // Background full screen
         Image(
             painter = painterResource(id = R.drawable.gunung),
             contentDescription = null,
@@ -75,14 +75,17 @@ fun HeaderSection() {
 
 @Composable
 fun LogoSection() {
+
     Image(
-        painter = painterResource(id = R.drawable.logo_umy),
-        contentDescription = "Logo UMY",
-        modifier = Modifier.size(120.dp),
-        contentScale = ContentScale.Fit
+        painter = painterResource(id = R.drawable.kucing1),
+        contentDescription = "Logo",
+        modifier = Modifier
+            .size(120.dp)
+            .clip(CircleShape)
+            .border(width = 3.dp, color = Color.White, shape = CircleShape),
+        contentScale = ContentScale.Crop
     )
 }
-
 
 @Composable
 fun DataMahasiswaSection() {
@@ -94,32 +97,32 @@ fun DataMahasiswaSection() {
             fontWeight = FontWeight.Bold
         )
         Text(
-            text = "Deni Lestari", // <-- Diubah
+            text = "Deni Lestari",
             color = Color.Blue,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
         Text(
-            text = "20240140004", // <-- Diubah
+            text = "20240140004",
             color = Color.Black,
             fontSize = 26.sp,
             fontWeight = FontWeight.Bold
         )
     }
 }
-// ===================================
 
 @Composable
 fun GambarKucingOrenSection() {
+
     Image(
-        painter = painterResource(id = R.drawable.pamfoto),
+        painter = painterResource(id = R.drawable.kucing2),
         contentDescription = "Foto profil",
         modifier = Modifier
             .size(290.dp)
             .clip(CircleShape)
             .background(Color(0xFFE8E8F4))
             .border(width = 4.dp, color = Color.White, shape = CircleShape),
-        contentScale = ContentScale.Fit
+        contentScale = ContentScale.Crop
     )
 }
 
