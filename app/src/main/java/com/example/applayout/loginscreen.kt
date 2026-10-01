@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.sp
 fun HalamanProfilKucing(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize()) {
 
-        // Background full screen
+
         Image(
             painter = painterResource(id = R.drawable.gunung),
             contentDescription = null,
@@ -84,3 +84,47 @@ fun LogoSection() {
 }
 
 
+@Composable
+fun DataMahasiswaSection() {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = "Nama",
+            color = Color.Red,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Deni Lestari", // <-- Diubah
+            color = Color.Blue,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "20240140004", // <-- Diubah
+            color = Color.Black,
+            fontSize = 26.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+// ===================================
+
+@Composable
+fun GambarKucingOrenSection() {
+    Image(
+        painter = painterResource(id = R.drawable.pamfoto),
+        contentDescription = "Foto profil",
+        modifier = Modifier
+            .size(290.dp)
+            .clip(CircleShape)
+            .background(Color(0xFFE8E8F4))
+            .border(width = 4.dp, color = Color.White, shape = CircleShape),
+        contentScale = ContentScale.Fit
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HalamanProfilKucingPreview() {
+    HalamanProfilKucing()
+}
