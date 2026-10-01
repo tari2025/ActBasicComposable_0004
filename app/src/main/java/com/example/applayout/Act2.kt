@@ -41,7 +41,7 @@ fun MyScaffold(
     }
 }
 
-// ===================== CONTOH DASAR =====================
+// ===================== KODE TAMBAHAN =====================
 
 @Composable
 fun ContohColumn1(modifier: Modifier = Modifier) {
@@ -66,8 +66,6 @@ fun ContohRow1(modifier: Modifier = Modifier) {
     }
 }
 
-// ===================== CONTOH LAIN =====================
-
 @Composable
 fun ContohColumn2(modifier: Modifier = Modifier) {
     Column(
@@ -91,8 +89,6 @@ fun ContohRow2(modifier: Modifier = Modifier) {
         Text(text = kota)
     }
 }
-
-// ===================== TATALETAK COLUMN =====================
 
 @Composable
 fun TataletakColumn(modifier: Modifier = Modifier) {
@@ -156,7 +152,7 @@ fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(height = 110.dp)
-                .background(Color(0xFF008080)), // Teal pakai hex
+                .background(Color(0xFF008080)), // ← Teal pakai hex code
             contentAlignment = Alignment.Center
         ) {
             Column {
