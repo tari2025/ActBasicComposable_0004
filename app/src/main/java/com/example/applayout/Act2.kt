@@ -20,9 +20,8 @@ class Act2 : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppLayoutTheme {
-                // Langsung pakai Scaffold, tidak perlu MyScaffold buatan sendiri
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TataletakBoxColumnRow(
+                    Act2TataletakBoxColumnRow(
                         modifier = Modifier.padding(paddingValues = innerPadding)
                     )
                 }
@@ -34,7 +33,7 @@ class Act2 : ComponentActivity() {
 // ===================== KODE TAMBAHAN =====================
 
 @Composable
-fun LatihanColumn1(modifier: Modifier = Modifier) {
+fun Act2ContohColumn(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.padding(top = 20.dp, start = 20.dp)
     ) {
@@ -44,8 +43,8 @@ fun LatihanColumn1(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun LatihanRow1(modifier: Modifier = Modifier) {
-    val kata = "Contoh Kata"
+fun Act2ContohRow(modifier: Modifier = Modifier) {
+    val kata = "Contoh Kata" // Ganti dari stringResource
     Row(
         modifier = modifier
             .padding(top = 60.dp, start = 60.dp)
@@ -57,7 +56,7 @@ fun LatihanRow1(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun LatihanColumn2(modifier: Modifier = Modifier) {
+fun Act2ContohColumn2(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.padding(top = 20.dp, start = 20.dp)
     ) {
@@ -67,8 +66,8 @@ fun LatihanColumn2(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun LatihanRow2(modifier: Modifier = Modifier) {
-    val kota = "Contoh Kota"
+fun Act2ContohRow2(modifier: Modifier = Modifier) {
+    val kota = "Contoh Kota" // Ganti dari stringResource
     Row(
         modifier = modifier
             .padding(top = 60.dp, start = 60.dp)
@@ -81,7 +80,7 @@ fun LatihanRow2(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TataletakColumn(modifier: Modifier = Modifier) {
+fun Act2TataletakColumn(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.padding(top = 20.dp, start = 20.dp, end = 20.dp)
     ) {
@@ -95,7 +94,7 @@ fun TataletakColumn(modifier: Modifier = Modifier) {
 // ===================== KODE DARI PDF =====================
 
 @Composable
-fun TataletakColumnRow(modifier: Modifier = Modifier) {
+fun Act2TataletakColumnRow(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -117,7 +116,7 @@ fun TataletakColumnRow(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TataletakRowColumn(modifier: Modifier = Modifier) {
+fun Act2TataletakRowColumn(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceEvenly
@@ -136,13 +135,13 @@ fun TataletakRowColumn(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
+fun Act2TataletakBoxColumnRow(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(height = 110.dp)
-                .background(Color(0xFF008080)),
+                .background(Color(0xFF008080)), // Hex Teal langsung
             contentAlignment = Alignment.Center
         ) {
             Column {
@@ -171,8 +170,8 @@ fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewTataletak() {
+fun Act2PreviewTataletak() {
     AppLayoutTheme {
-        TataletakBoxColumnRow(modifier = Modifier.fillMaxSize())
+        Act2TataletakBoxColumnRow(modifier = Modifier.fillMaxSize())
     }
 }
