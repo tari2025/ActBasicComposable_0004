@@ -11,14 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.applayout.ui.theme.AppLayoutTheme
-
-// 👇 BARIS BARU — taruh di sini
-val Teal = Color(0xFF008080)
 
 class Act2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,22 +41,127 @@ fun MyScaffold(
     }
 }
 
-// ... (semua fungsi ContohColumn, ContohRow, dll. tidak berubah) ...
+// ===================== CONTOH DASAR =====================
+
+@Composable
+fun ContohColumn1(modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier.padding(top = 20.dp, start = 20.dp)
+    ) {
+        Text("Hello")
+        Text("World")
+    }
+}
+
+@Composable
+fun ContohRow1(modifier: Modifier = Modifier) {
+    val kata = stringResource(id = R.string.kata)
+    Row(
+        modifier = modifier
+            .padding(top = 60.dp, start = 60.dp)
+            .fillMaxWidth()
+    ) {
+        Text(text = "Hello")
+        Text(text = kata)
+    }
+}
+
+// ===================== CONTOH LAIN =====================
+
+@Composable
+fun ContohColumn2(modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier.padding(top = 20.dp, start = 20.dp)
+    ) {
+        Text("Hello")
+        Text("Word")
+    }
+}
+
+@Composable
+fun ContohRow2(modifier: Modifier = Modifier) {
+    val kota = stringResource(id = R.string.kota)
+    Row(
+        modifier = modifier
+            .padding(top = 60.dp, start = 60.dp)
+            .fillMaxWidth()
+    ) {
+        Text(text = "Komponen4")
+        Text(text = "hello")
+        Text(text = kota)
+    }
+}
+
+// ===================== TATALETAK COLUMN =====================
+
+@Composable
+fun TataletakColumn(modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier.padding(top = 20.dp, start = 20.dp, end = 20.dp)
+    ) {
+        Text(text = "Komponen1")
+        Text(text = "Komponen2")
+        Text(text = "Komponen3")
+        Text(text = "Komponen4")
+    }
+}
+
+// ===================== KODE DARI PDF =====================
+
+@Composable
+fun TataletakColumnRow(modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Text(text = "Komponen1Baris1")
+            Text(text = "Komponen2Baris1")
+            Text(text = "Komponen3Baris1")
+        }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Text(text = "Komponen1Baris2")
+            Text(text = "Komponen2Baris2")
+            Text(text = "Komponen3Baris2")
+        }
+    }
+}
+
+@Composable
+fun TataletakRowColumn(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        Column {
+            Text(text = "Komponen1Kolon1")
+            Text(text = "Komponen2Kolon1")
+            Text(text = "Komponen3Kolon1")
+        }
+        Column {
+            Text(text = "Komponen1Kolon2")
+            Text(text = "Komponen2Kolon2")
+            Text(text = "Komponen3Kolon2")
+        }
+    }
+}
 
 @Composable
 fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
-    // val gambar = painterResource(id = R.drawable.notasibolok)
-    Column {
+    Column(modifier = modifier) {
         Box(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
                 .height(height = 110.dp)
-                .background(Teal),   // 👈 DIUBAH dari Color.Teal jadi Teal
+                .background(Color(0xFF008080)), // Teal pakai hex
             contentAlignment = Alignment.Center
         ) {
             Column {
                 Row(
-                    modifier = modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Text(text = "Col1_Row1_Komponen1")
@@ -68,7 +169,7 @@ fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
                     Text(text = "Col1_Row1_Komponen3")
                 }
                 Row(
-                    modifier = modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Text(text = "Col1_Row2_Komponen1")
@@ -79,6 +180,8 @@ fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
         }
     }
 }
+
+// ===================== PREVIEW =====================
 
 @Preview(showBackground = true)
 @Composable
