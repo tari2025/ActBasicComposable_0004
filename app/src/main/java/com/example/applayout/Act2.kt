@@ -75,3 +75,50 @@ fun ContohRow() {
     }
 }
 
+// ============================================================
+// 3. TATA LETAK COLUMN > ROW
+// ============================================================
+@Composable
+fun TataLetakColumnRow(modifier: Modifier = Modifier) {
+    Column(modifier = modifier.fillMaxWidth()) {
+        Row(
+            modifier = modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Text(text = "Komponen1Baris1")
+            Text(text = "Komponen2Baris1")
+            Text(text = "Komponen3Baris1")
+        }
+        Row(
+            modifier = modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Text(text = "Komponen1Baris2")
+            Text(text = "Komponen2Baris2")
+            Text(text = "Komponen3Baris2")
+        }
+    }
+}
+
+// ============================================================
+// 4. TATA LETAK ROW > COLUMN
+// ============================================================
+@Composable
+fun TataLetakRowColumn(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        Column {
+            Text(text = "Komponen1Kolom1")
+            Text(text = "Komponen2Kolom1")
+            Text(text = "Komponen3Kolom1")
+        }
+        Column {
+            Text(text = "Komponen1Kolom2")
+            Text(text = "Komponen2Kolom2")
+        }
+    }
+}
+
+}
